@@ -21,19 +21,19 @@ class FoodyPipeline:
         return pipeline
 
     def spider_opened(self, spider):
-        self.file = open('../OUTPUT/Foody.csv', 'w+b')
-        self.file1 = open('../OUTPUT/Restaurant.csv', 'w+b')
-        self.file2 = open('../OUTPUT/User.csv', 'w+b')
-        self.file3 = open('../OUTPUT/Comment.csv', 'w+b')
+        self.file = open('./OUTPUT/Foody.csv', 'w+b')
+        self.file1 = open('./OUTPUT/Restaurant.csv', 'w+b')
+        self.file2 = open('./OUTPUT/User.csv', 'w+b')
+        self.file3 = open('./OUTPUT/Comment.csv', 'w+b')
 
         self.exporter = CsvItemExporter(self.file)
         self.exporter1 = CsvItemExporter(self.file1)
         self.exporter2 = CsvItemExporter(self.file2)
         self.exporter3 = CsvItemExporter(self.file3)
 
-        self.exporter1.fields_to_export = ['ResId','Rating','streetAddress','district','region','Res_pos_score','Res_price_score','Res_food_score','Res_atmosphere_score','Res_services_score']
+        self.exporter1.fields_to_export = ['ResId','Res_rating','streetAddress','district','region','Res_pos_score','Res_price_score','Res_food_score','Res_atmosphere_score','Res_services_score']
         self.exporter2.fields_to_export = ['UserId','Total_reviews','Followers']
-        self.exporter3.fields_to_export = ['RevId','UserId','ResId','Comment','image_urls','Food_score_cmt','Services_score_cmt','Atmosphere_score_cmt','Position_score_cmt','Price_score_cmt' ]
+        self.exporter3.fields_to_export = ['RevId','UserId','ResId','Comment','image_urls','Food_score_cmt','Services_score_cmt','Atmosphere_score_cmt','Position_score_cmt','Price_score_cmt', 'Rating' ]
 
         self.exporter.start_exporting()
         self.exporter1.start_exporting()

@@ -13,7 +13,7 @@ SPIDER_MODULES = ['foody.spiders']
 NEWSPIDER_MODULE = 'foody.spiders'
 
 ITEM_PIPELINES = {'foody.pipelines.customImagePipeline': 1,  'foody.pipelines.FoodyPipeline': 300}
-IMAGES_STORE = 'local1_folder'
+IMAGES_STORE = 'local2_folder'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
